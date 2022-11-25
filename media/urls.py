@@ -18,22 +18,11 @@ from django.urls import path
 from django.conf.urls import include
 from django.conf import settings
 from django.conf.urls.static import static
-from anonymizer.models import Post
-from django.contrib.contenttypes import views as contenttype_views
-
-
-admin.site.site_header = 'Anonymizer App'                           # default: "Django Administration"
-admin.site.index_title = 'Site Administration and Data Anonymization' # default: "Site administration"
-admin.site.site_title = 'Anonymizer'                                # default: "Django site admin"
 
 urlpatterns = [
-
     path('admin/', admin.site.urls),
     path('accounts/', include('django.contrib.auth.urls')),
     path('', include('anonymizer.urls')),
-    
 ]
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
-    #urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
-    
