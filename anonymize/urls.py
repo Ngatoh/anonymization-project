@@ -29,7 +29,7 @@ admin.site.site_title = 'Anonymizer'                                # default: "
 urlpatterns = [
 
     path('', admin.site.urls),
-    #path('admin/', admin.site.urls),
+    path('admin/', admin.site.urls),
     path('accounts/', include('django.contrib.auth.urls')),
     path('', include('anonymizer.urls')),
     
